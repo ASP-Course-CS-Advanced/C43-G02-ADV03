@@ -24,6 +24,20 @@ namespace Demo
 
             return result;
         }
+        
+        public static List<T> FindElementsv02<T>(List<T> elements, Predicate<T> filterFunc)
+        {
+            List<T> result = new List<T>();
+
+            if (elements?.Count > 0 && filterFunc is not null)
+                for (int i = 0; i < elements.Count; i++)
+                    //if (numbers[i] % 2 == 1)
+                    if (filterFunc.Invoke(elements[i]))//Delegate this line to let the user pass it as parameter to this function by make function that check if number even,
+                        result.Add(elements[i]);       //and let reference from delegate with signature same with function refer to it.
+
+
+            return result;
+        }
 
         //Invalid Approach [there are 2 functions with same body, the difference is just condition - so let the user enter this condition]
         // as a parameter , this parameter will be reference from delegate refer to function that take parameter "int" and return bool.
