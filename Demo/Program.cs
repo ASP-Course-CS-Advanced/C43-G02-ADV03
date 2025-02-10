@@ -68,7 +68,7 @@
             #region Sort Asc - BubbleSort(numbers, SortingTypes.CompareGreater)
 
             //int[] numbersAsc = new int[] { 7, 5, 6, 9, 8, 7, 5, 2, 3, 1 };
-            //SortingAlgorithms.BubbleSort(numbersAsc, SortingTypes.CompareGreater);
+            //SortingAlgorithms<int>.BubbleSort(numbersAsc, SortingTypes.SortAsc);
 
             //foreach (var item in numbersAsc)
             //{
@@ -82,13 +82,13 @@
             #region Sort Desc - BubbleSort(numbers, sortDesc)
 
             //int[] numbersDesc = new int[] { 7, 5, 6, 9, 8, 7, 5, 2, 3, 1 };
-            //SortingTypesFuncDelegate sortDesc = new SortingTypesFuncDelegate(SortingTypes.CompareLess);
-            //sortDesc = null;
-            //SortingAlgorithms.BubbleSort(numbersDesc, sortDesc);
+            //SortingTypesFuncDelegate<int, int, bool> sortDesc = new SortingTypesFuncDelegate<int, int, bool>(SortingTypes.SortDesc);
+            ////sortDesc = null;
+            //SortingAlgorithms<int>.BubbleSort(numbersDesc, sortDesc);
 
             //foreach (var item in numbersDesc)
             //{
-            //    Console.Write($"{item} ");// 1 2 3 5 5 6 7 7 8 9
+            //    Console.Write($"{item} ");// 9 8 7 7 6 5 5 3 2 1
 
             //}
 
@@ -103,6 +103,38 @@
             ///{
             ///    Console.Write($"{item} ");// 9 8 7 7 6 5 5 3 2 1
             ///}
+
+            #endregion
+
+            #region Part 04 Delegate Example 02 With Generics
+
+            //string[] names = new string[]
+            //{
+            //    new string("Ahmed"),
+            //    new string("Eslam"),
+            //    new string("Khaled"),
+            //    new string("Amir"),
+            //    new string("Sama"),
+            //    new string("Nono"),
+            //    new string("Ali"),
+            //    new string("Amr")
+            //};
+
+            #region Sort Asc Based On string Length - BubbleSort(names, SortingTypes.CompareGreater)
+
+            //SortingAlgorithms<string>.BubbleSort(names, SortingTypes.SortAsc);
+            //Console.WriteLine(string.Join(", ", names));
+
+            #endregion
+
+            #region Sort Desc Based on string Length - BubbleSort(names, sortingType).
+
+            //SortingTypesFuncDelegate<string, string, bool> sortingType = new SortingTypesFuncDelegate<string, string, bool>(SortingTypes.SortDesc);
+
+            //SortingAlgorithms<string>.BubbleSort(names, sortingType);
+            //Console.WriteLine(string.Join(", ", names));
+
+            #endregion
 
             #endregion
 

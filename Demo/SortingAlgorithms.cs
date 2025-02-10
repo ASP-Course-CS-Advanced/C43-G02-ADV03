@@ -6,18 +6,22 @@ using System.Threading.Tasks;
 
 namespace Demo
 {
-    public delegate bool SortingTypesFuncDelegate(int x, int y);
+    //Non Generic Delegate [Can hold only address of any function that take 2 parameters of type int only and return bool]
+    //public delegate bool SortingTypesFuncDelegate<T>(T x, T y);
+    
+    //Generic Delegate [Can hold address of any function that take 2 parameters of anyType and return bool]
+    public delegate Tout SortingTypesFuncDelegate<in T,in T2,out Tout>(T x, T2 y);
 
-    internal static class SortingAlgorithms
+    internal static class SortingAlgorithms<T>
     {
-        private static void SWAP(ref int v1, ref int v2)
+        private static void SWAP(ref T v1, ref T v2)
         {
-            int temp = v1;
+            T temp = v1;
             v1 = v2;
             v2 = temp;
         }
 
-        public static void BubbleSort(int[] arr, SortingTypesFuncDelegate sortingType)
+        public static void BubbleSort(T[] arr, SortingTypesFuncDelegate<T,T,bool> sortingType)//Same T[Type], Because the delegate will refer to methods take parameters of same type.
         {
             if (arr?.Length > 0 && sortingType is not null)
                 for (int i = 0; i < arr.Length; i++)

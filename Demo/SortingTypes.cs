@@ -8,16 +8,28 @@ namespace Demo
 {
     internal static class SortingTypes
     {
-        //arr[j] > arr[j + 1] "Sorting Asc"
-        public static bool CompareGreater(int x,int y)
+        //if(arr[j] > arr[j + 1]) -> SWAP(ref arr[j],arr[j+1])  "Sorting Asc"
+        public static bool SortAsc(int x, int y)
         {
             return x > y;
         }
 
-        //arr[j] < arr[j + 1] "Sorting Desc"
-        public static bool CompareLess(int x,int y)
+        public static bool SortAsc(string x, string y)
+        {
+            return x.Length > y.Length;
+        }
+
+        //if(arr[j] < arr[j + 1]) -> SWAP(ref arr[j],arr[j+1])  "Sorting Desc"
+        public static bool SortDesc(int x, int y)
         {
             return x < y;
         }
+
+        public static bool SortDesc(string x, string y)
+        {
+            return x.Length < y.Length;
+        }
+
+
     }
 }
