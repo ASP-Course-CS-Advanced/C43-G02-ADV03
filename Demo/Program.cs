@@ -1,5 +1,7 @@
 ﻿namespace Demo
 {
+    #region Part 02 Delegate Example 01
+    
     //Step 00  - [Define Delegate].
     public delegate int StringFuncDelegate(string s);// This line compiled as a class which has some methods and constructor
                                                      // in compilation time (IL code).
@@ -12,6 +14,9 @@
     /// Regardless Function name or parameter name or access modifiers
     /// Like in this case -> Reference from this delegate "StringFuncDelegate" could refer only to function that return "int"
     /// and take only one parameter of type "string". 
+
+
+    #endregion
 
     internal class Program
     {
@@ -61,9 +66,17 @@
             //{
             //    Console.Write($"{item} ");// 1 2 3 5 5 6 7 7 8 9
             //} 
+            ///Invalid Approach
+            ///SortingAlgorithms.BubbleSortDesc(numbers);
+            ///
+            ///foreach (var item in numbers)
+            ///{
+            ///    Console.Write($"{item} ");// 9 8 7 7 6 5 5 3 2 1
+            ///}
+
             #endregion
 
-            #region using delegate as a parameter that could refer to any function that take 2 int parameters and return bool - BubbleSort(int[] arr,SortingTypesFuncDelegate sortingType)
+            #region Using delegate as a parameter that could refer to any function that take 2 int parameters and return bool - BubbleSort(int[] arr,SortingTypesFuncDelegate sortingType)
 
             #region Sort Asc - BubbleSort(numbers, SortingTypes.CompareGreater)
 
@@ -96,13 +109,6 @@
 
             #endregion
 
-            ///Invalid Approach
-            ///SortingAlgorithms.BubbleSortDesc(numbers);
-            ///
-            ///foreach (var item in numbers)
-            ///{
-            ///    Console.Write($"{item} ");// 9 8 7 7 6 5 5 3 2 1
-            ///}
 
             #endregion
 
@@ -120,19 +126,138 @@
             //    new string("Amr")
             //};
 
-            #region Sort Asc Based On string Length - BubbleSort(names, SortingTypes.CompareGreater)
+            #region Sort Asc Based On string Length[Pass Function Direct] - BubbleSort(names, SortingTypes.CompareGreater)
 
             //SortingAlgorithms<string>.BubbleSort(names, SortingTypes.SortAsc);
             //Console.WriteLine(string.Join(", ", names));
 
             #endregion
 
-            #region Sort Desc Based on string Length - BubbleSort(names, sortingType).
+            #region Sort Desc Based on string Length [Pass Reference From Delegate That refer to function] - BubbleSort(names, sortingType).
 
             //SortingTypesFuncDelegate<string, string, bool> sortingType = new SortingTypesFuncDelegate<string, string, bool>(SortingTypes.SortDesc);
 
             //SortingAlgorithms<string>.BubbleSort(names, sortingType);
             //Console.WriteLine(string.Join(", ", names));
+
+            #endregion
+
+            #endregion
+
+            #region Part 05 Delegate Example 03
+
+            #region Before using Delegate as a parameter - List<int> oddNumbers = FilterLists.FindOddNumbers(numbers);
+
+            //List<int> numbers = Enumerable.Range(1, 100).ToList();
+            //List<int> oddNumbers = FilterLists.FindOddNumbers(numbers);
+            //Console.WriteLine(string.Join(", ", oddNumbers));
+
+            //Console.WriteLine(); 
+
+            #region Invalid Approach.
+
+            //List<int> EvenNumbers = FilterLists.FindEvenNumbers(numbers);
+            //Console.WriteLine(string.Join(", ", EvenNumbers)); 
+
+            #endregion
+
+            #endregion
+
+            #region Using delegate as a parameter that could refer to any function that take 1 int parameters and return bool - FindElement(List<int>[] numbers,FilterFuncDelegate FilterFunc)
+
+            #region Find OddNumbers [Pass Function Direct] - List<int> oddNumbers = FilterLists.FindElements<int>(numbers, FiltersOfList.CheckOdd);
+
+            //List<int> numbers = Enumerable.Range(1, 100).ToList();
+            //List<int> oddNumbers = FilterLists.FindElements<int>(numbers, FiltersOfList.CheckOdd);
+
+            //Console.WriteLine(string.Join(", ", oddNumbers));
+
+            #endregion
+
+            #region Find EvenNumbers[Pass Reference From Delegate That refer to function] - List<int> EvenNumbers = FilterLists.FindElements<int>(numbers, filterFuncDelegate);
+
+            //List<int> numbers = Enumerable.Range(1, 100).ToList();
+            //FilterFuncDelegate<int> filterFuncDelegate = new FilterFuncDelegate<int>(FiltersOfList.CheckEven);
+            //List<int> EvenNumbers = FilterLists.FindElements<int>(numbers, filterFuncDelegate);
+
+            //Console.WriteLine(string.Join(", ", EvenNumbers));
+
+            #endregion
+
+            #region Find DivisibleBy7 elements - List<int> DivisiblesBy7 = FilterLists.FindElements<int>(numbers, filterFuncDelegate);
+
+            //List<int> numbers = Enumerable.Range(1, 100).ToList();
+            //FilterFuncDelegate<int> filterFuncDelegate = new FilterFuncDelegate<int>(FiltersOfList.DivisibleBy7);
+            //List<int> DivisiblesBy7 = FilterLists.FindElements<int>(numbers, filterFuncDelegate);
+
+            //Console.WriteLine(string.Join(", ", DivisiblesBy7));//  7, 14, 21, 28, 35, 42, 49, 56, 63, 70, 77, 84, 91, 98
+
+            #endregion
+
+            #region Find DivisibleByTen elements - List<int> DivisiblesByTen = FilterLists.FindElements<int>(numbers, FiltersOfList.DivisibleByTen);
+
+            //List<int> numbers = Enumerable.Range(1, 100).ToList();
+            //List<int> DivisiblesByTen = FilterLists.FindElements<int>(numbers, FiltersOfList.DivisibleByTen);
+
+            //Console.WriteLine(string.Join(", ", DivisiblesByTen));//  10, 20, 30, 40, 50, 60, 70, 80, 90, 100
+
+            #endregion
+
+            #region Find Strings More Than 3 Chars - List<string> namesMoreThan3 = FilterLists.FindElements<string>(names, FiltersOfList.StringMoreThanThree);
+
+
+            //List<string> names = new List<string>()
+            //{
+            //    new string("Eslam"),
+            //    new string("Ali"),
+            //    new string("Amr"),
+            //    new string("Ahd"),
+            //    new string("Samir"),
+            //    new string("Eman"),
+            //};
+
+            //List<string> namesMoreThan3 = FilterLists.FindElements<string>(names, FiltersOfList.StringMoreThanThree);
+
+            //Console.WriteLine(string.Join(", ",namesMoreThan3));// Eslam, Samir, Eman
+
+            #endregion
+
+            #region Find Strings Less Than 4 Chars - List<string> namesLessThan4 = FilterLists.FindElements<string>(names, filterFuncDelegate);
+
+            //List<string> names = new List<string>()
+            //{
+            //    new string("Eslam"),
+            //    new string("Ali"),
+            //    new string("Amr"),
+            //    new string("Ahd"),
+            //    new string("Samir"),
+            //    new string("Eman"),
+            //};
+
+            //FilterFuncDelegate<string> filterFuncDelegate = new FilterFuncDelegate<string>(FiltersOfList.StringLessThanFour);
+            //List<string> namesLessThan4 = FilterLists.FindElements<string>(names, filterFuncDelegate);
+
+            //Console.WriteLine(string.Join(", ", namesLessThan4));// Ali, Amr, Ahd
+
+            #endregion
+
+            #region Find Strings More Than 4 Chars - List<string> namesMoreThan4 = FilterLists.FindElements<string>(names, FiltersOfList.StringMoreThanFour);
+
+            //List<string> names = new List<string>()
+            //{
+            //    new string("Eslam"),
+            //    new string("Ali"),
+            //    new string("Amr"),
+            //    new string("Ahd"),
+            //    new string("Samir"),
+            //    new string("Eman"),
+            //};
+
+            //List<string> namesMoreThan4 = FilterLists.FindElements<string>(names, FiltersOfList.StringMoreThanFour);
+
+            //Console.WriteLine(string.Join(", ", namesMoreThan4));// Eslam, Samir
+
+            #endregion
 
             #endregion
 
