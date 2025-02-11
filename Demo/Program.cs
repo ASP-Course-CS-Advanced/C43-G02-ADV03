@@ -606,7 +606,7 @@ namespace Demo
             //action1.Invoke("Eslam");//Hello Eslam!
             //action1.Invoke("Omar");//Hello Omar!
 
-            #endregion 
+            #endregion
 
             #endregion
 
@@ -676,10 +676,52 @@ namespace Demo
             //action1.Invoke("Eslam");//Hello Eslam!
             //action1.Invoke("Omar");//Hello Omar!
 
-            #endregion 
+            #endregion
 
             #endregion
 
+
+            #endregion
+
+            #region Part 09 Function Return Function [FPP]
+
+            #region Example01 - Function return Action
+
+            //Action action = FunctionsReturnDelegate.DelegateAction();//Execute The function DelegateAction() that return refrerence from Action Delegate
+            //                                                         //That Hold Address of function that not take parameters and print Hello World, so now this line return this function addrees
+            //                                                         //so you need to invoke the function that reference refer to it to print "Hello World!".
+
+            //action.Invoke();//Hello World! 
+
+            ////Or direct invoke the return of DelegateAction(), which is another function.
+
+            //FunctionsReturnDelegate.DelegateAction().Invoke();//Hello World! 
+
+            #endregion
+
+            #region Example02 - Function Return Predicate<T>
+
+            //Predicate<int> predicate = FunctionsReturnDelegate.DelegatePredicate();
+            //bool isEven = predicate.Invoke(8);
+
+            //Console.WriteLine(isEven);//True
+
+            ////Or
+
+            //Console.WriteLine(FunctionsReturnDelegate.DelegatePredicate().Invoke(5));//False
+
+            #endregion
+
+            #region Example03 - Function Return Func<T>
+
+            //string str = FunctionsReturnDelegate.DelegateFunc().Invoke(new char[] { 'E', 'S', 'L', 'A', 'M' });
+            //Console.WriteLine(str);//ESLAM
+
+            ////Or
+
+            //Console.WriteLine(FunctionsReturnDelegate.DelegateFunc().Invoke(new char[] { 'A', 'H', 'M', 'E', 'D' }));//AHMED
+
+            #endregion
 
             #endregion
 
