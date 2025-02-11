@@ -1,4 +1,5 @@
 ﻿using System.Net.NetworkInformation;
+using System.Net.Security;
 
 namespace Demo
 {
@@ -547,6 +548,138 @@ namespace Demo
             #endregion
 
             #endregion
+
+            #endregion
+
+            #region Part 07 Anonymous Method And Lambda Expression
+
+            #region Anonymous Method - use it when you need to use method once in specific line in code
+
+            #region Predicate<T>
+
+            ////Predicate<int> predicate = new Predicate<int>(TestBuiltInDelegates.CheckPositive);
+
+            ////Anonymous Function - Take (int), return (bool)
+            //Predicate<int> predicate = new Predicate<int>(delegate (int num) { return num > 0; });
+            //Console.WriteLine(predicate.Invoke(5));// True
+            //Console.WriteLine(predicate.Invoke(-1));// False 
+
+            ////Or use Func<int,bool>
+
+            ////Func<int, bool> predicate02 = new Func<int, bool>(TestBuiltInDelegates.CheckPositive);
+
+            ////Anonymous Function
+            //Func<int, bool> predicate02 = new Func<int, bool>(delegate (int num) { return num > 0; });
+            //Console.WriteLine(predicate02.Invoke(5));// True
+            //Console.WriteLine(predicate02.Invoke(-1));// False 
+
+            #endregion
+
+            #region Func<T>
+
+            ////Func<int, string> func = new Func<int, string>(TestBuiltInDelegates.CastInt);
+
+            ////Anonymous Function
+            //Func<int, string> func = new Func<int, string>(delegate (int num) { return num.ToString(); });
+            //Console.WriteLine(func.Invoke(5));//5 [As string]
+            //Console.WriteLine(func.Invoke(150));//150 [As string]
+
+            #endregion
+
+            #region Action - Non-Generic [Not return And Not take any parameters]
+
+            ////Action action = new Action(TestBuiltInDelegates.Print);
+
+            ////Anonymous Method [Function Without Name & return & Access Modifier - inline functions for one usage]
+            //Action action = new Action(delegate () { Console.WriteLine("Hello World!"); });
+
+            //action.Invoke();//Hello World! 
+
+            #endregion
+
+            #region Action<T>
+
+            ////Action<string> action1 = new Action<string>(TestBuiltInDelegates.Print);
+
+            ////Anonymous Function [Define The Function inline - not need to define it in seperate class because i will use it once.]
+            //Action<string> action1 = delegate (string name) { Console.WriteLine($"Hello {name}"); };
+            //action1.Invoke("Eslam");//Hello Eslam!
+            //action1.Invoke("Omar");//Hello Omar!
+
+            #endregion 
+
+            #endregion
+
+            #region Lambda Expression - Enhancement for Anonymous method syntax.
+
+            #region Predicate<T>
+
+            ////Anonymous Function - Take (int), return (bool)
+            ////Predicate<int> predicate = new Predicate<int>(delegate (int num) { return num > 0; });
+
+            ////Lambda Expression
+            //Predicate<int> predicate = new Predicate<int>(num => num > 0);
+            //Console.WriteLine(predicate.Invoke(5));// True
+            //Console.WriteLine(predicate.Invoke(-1));// False 
+
+            ////Or use Func<int, bool>
+
+            ////Func<int, bool> predicate02 = new Func<int, bool>(TestBuiltInDelegates.CheckPositive);
+
+            ////Anonymous Function
+            ////Func<int, bool> predicate02 = new Func<int, bool>(delegate (int num) { return num > 0; });
+
+            ////Lambda Expression
+            //Func<int, bool> predicate02 = new Func<int, bool>((num) => num > 0);
+            //Console.WriteLine(predicate02.Invoke(5));// True
+            //Console.WriteLine(predicate02.Invoke(-1));// False 
+
+            #endregion
+
+            #region Func<T>
+
+            ////Func<int, string> func = new Func<int, string>(TestBuiltInDelegates.CastInt);
+
+            ////Anonymous Function
+            ////Func<int, string> func = new Func<int, string>(delegate (int num) { return num.ToString(); });
+
+            ////Lambda Expression
+            //Func<int, string> func = new Func<int, string>(num => num.ToString());
+            //Console.WriteLine(func.Invoke(5));//5 [As string]
+            //Console.WriteLine(func.Invoke(150));//150 [As string]
+
+            #endregion
+
+            #region Action - Non-Generic [Not return And Not take any parameters]
+
+            ////Action action = new Action(TestBuiltInDelegates.Print);
+
+            ////Anonymous Method [Function Without Name & return & Access Modifier - inline functions for one usage]
+            ////Action action = new Action(delegate () { Console.WriteLine("Hello World!"); });
+
+            ////Lambda Expression [Enhancement for Anonymous method syntax]
+            //Action action = new Action(() => Console.WriteLine("Hello World!"));
+
+            //action.Invoke();//Hello World! 
+
+            #endregion
+
+            #region Action<T>
+
+            ////Action<string> action1 = new Action<string>(TestBuiltInDelegates.Print);
+
+            ////Anonymous Function [Define The Function inline - not need to define it in seperate class because i will use it once.]
+            ////Action<string> action1 = delegate (string name) { Console.WriteLine($"Hello {name}"); };
+
+            ////Lambda Expression
+            //Action<string> action1 = name => Console.WriteLine($"Hello {name}");
+            //action1.Invoke("Eslam");//Hello Eslam!
+            //action1.Invoke("Omar");//Hello Omar!
+
+            #endregion 
+
+            #endregion
+
 
             #endregion
 
