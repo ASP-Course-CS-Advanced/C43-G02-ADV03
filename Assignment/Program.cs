@@ -96,13 +96,13 @@
 
             #region Part03
 
-            //MyList1<int> numbers = new MyList1<int>();
-            //numbers.Add(-1);
-            //numbers.Add(-5);
-            //numbers.Add(3);
-            //numbers.Add(4);
-            //numbers.Add(5);
-            //numbers.Add(6);
+            MyList1<int> numbers = new MyList1<int>();
+            numbers.Add(-1);
+            numbers.Add(-5);
+            numbers.Add(3);
+            numbers.Add(4);
+            numbers.Add(5);
+            numbers.Add(6);
 
             #region Exist()
 
@@ -113,14 +113,15 @@
             #region Find()
 
             //int FirstOddNumber = numbers.Find(X => X % 2 != 0);
-            //Console.WriteLine(FirstOddNumber);//3
+            //Console.WriteLine(FirstOddNumber);//-1
 
             #endregion
 
             #region FindAll()
 
-            //MyList<int> newList = numbers.FindAll(X => X % 2 == 0);
-            //Console.WriteLine(string.Join(", ",newList));// 0, 2, 4, 6
+            //MyList1<int> newList = numbers.FindAll(X => X % 2 == 0);
+
+            //Console.WriteLine(string.Join(", ",newList));//4, 6
 
             #endregion
 

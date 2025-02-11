@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
@@ -7,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace Assignment
 {
-    internal class MyList1<T>
+    internal class MyList1<T>:IEnumerable<T>
     {
         private T[] arr;
-        private int size;
+        public int size;
 
         public MyList1()
         {
@@ -107,6 +108,19 @@ namespace Assignment
                 return true;
             else
                 return false;
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            for (int i = 0; i < size; i++)
+            {
+                yield return arr[i];
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
         }
     }
 }
