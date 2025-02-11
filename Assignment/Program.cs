@@ -96,68 +96,6 @@
 
             #region Part03
 
-            //MyList<int> myList = new MyList<int>();
-            //myList.Add(10);
-            //myList.Add(20);
-            //myList.Add(30);
-            //myList.Add(40);
-
-
-            #region Exists()
-
-            //Console.WriteLine(myList.Exists(x => x == 20)); // True
-
-            #endregion
-
-            #region Find()
-
-            //Console.WriteLine(myList.Find(x => x == 30)); // 30 
-
-            #endregion
-
-            #region FindAll()
-
-            //MyList<int> evenNumbers = myList.FindAll(x => x % 2 == 0);
-            //Console.WriteLine(string.Join(",", evenNumbers));// 10,20,30,40
-
-            #endregion
-
-            #region FindIndex()
-
-            //Console.WriteLine(myList.FindIndex(x => x == 30)); // 2 
-
-            #endregion
-
-            #region FindLast()
-
-            //Console.WriteLine(myList.FindLast(x => x > 20)); // 40 
-
-            #endregion
-
-            #region FindLastIndex()
-
-            //Console.WriteLine(myList.FindLastIndex(x => x == 20)); // 1 
-
-            #endregion
-
-            #region ForEach()
-
-            //myList.ForEach(x => Console.Write($"{x} ")); // 10 20 30 40 
-            //Console.WriteLine();
-
-            #endregion
-
-            #region TrueForAll
-
-            //Console.WriteLine(myList.TrueForAll(x => x > 0)); // True 
-
-            #endregion
-
-
-            #endregion
-
-            #region Part03
-
             //MyList1<int> numbers = new MyList1<int>();
             //numbers.Add(-1);
             //numbers.Add(-5);
