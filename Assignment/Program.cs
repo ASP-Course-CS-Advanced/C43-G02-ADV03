@@ -5,6 +5,12 @@
         static void Main(string[] args)
         {
 
+            #region Part01
+
+            //Check Demo Branch
+
+            #endregion
+
             #region Part02
 
             #region Using User-Define Delegate BookDelegate1.
@@ -147,6 +153,72 @@
 
             #endregion
 
+
+            #endregion
+
+            #region Part03
+
+            //MyList1<int> numbers = new MyList1<int>();
+            //numbers.Add(-1);
+            //numbers.Add(-5);
+            //numbers.Add(3);
+            //numbers.Add(4);
+            //numbers.Add(5);
+            //numbers.Add(6);
+
+            #region Exist()
+
+            //Console.WriteLine(numbers.Exist(x => x % 2 == 0));//True
+
+            #endregion
+
+            #region Find()
+
+            //int FirstOddNumber = numbers.Find(X => X % 2 != 0);
+            //Console.WriteLine(FirstOddNumber);//3
+
+            #endregion
+
+            #region FindAll()
+
+            //MyList<int> newList = numbers.FindAll(X => X % 2 == 0);
+            //Console.WriteLine(string.Join(", ",newList));// 0, 2, 4, 6
+
+            #endregion
+
+            #region FindIndex()
+
+            //int firstEvenIndex = numbers.FindIndex(X => X % 2 == 0);
+            //Console.WriteLine(firstEvenIndex);//3
+
+            #endregion
+
+            #region FindLast()
+
+            //int LastEven = numbers.FindLast(X => X % 2 == 0);
+            //Console.WriteLine(LastEven);//6
+
+            #endregion
+
+            #region FindLastIndex()
+
+            //int LastOddIndex = numbers.FindLastIndex(X => X % 2 == 1);
+            //Console.WriteLine(LastOddIndex);//4
+
+            #endregion
+
+            #region ForEach()
+
+            //numbers.ForEach(X => Console.Write($"{X + 1} "));// 0 -4 4 5 6 7
+
+            #endregion
+
+            #region TrueForAll()
+
+            //bool AllNumbersPositive = numbers.TrueForAll(X => X > 0);
+            //Console.WriteLine(AllNumbersPositive);//False
+
+            #endregion
 
             #endregion
 
