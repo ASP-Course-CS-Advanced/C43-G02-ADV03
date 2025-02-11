@@ -48,9 +48,9 @@ namespace Assignment
             return default;
         }
 
-        public MyList<T> FindAll(Predicate<T> predicate)
+        public MyList1<T> FindAll(Predicate<T> predicate)
         {
-            MyList<T> newList = new MyList<T>();
+            MyList1<T> newList = new MyList1<T>();
             for (int i = 0; i < size; i++)
             {
                 if (predicate.Invoke(arr[i]))
